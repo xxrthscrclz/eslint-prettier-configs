@@ -9,6 +9,7 @@ export default defineConfig([
     files: ['**/*.ts', '**/*.tsx'],
     ...typescript,
   },
+
   {
     files: ['**/*.{jsx,tsx}'],
     ...react,
