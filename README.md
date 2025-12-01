@@ -58,6 +58,8 @@ import prettierConfig from '@frontend/prettier-config';
 export default prettierConfig;
 ```
 
+---
+
 ## 🎯 추천 스크립트
 
 프로젝트 package.json에 아래처럼 추가하면 편리합니다.
