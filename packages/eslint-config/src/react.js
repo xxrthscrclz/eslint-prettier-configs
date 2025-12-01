@@ -10,8 +10,13 @@ const react = {
     ...reactPlugin.configs.recommended.rules,
     ...reactHooks.configs.recommended.rules,
 
+    'react/destructuring-assignment': 'warn',
+    'react/jsx-pascal-case': 'warn',
+    'react/no-direct-mutation-state': 'warn',
     'react/jsx-key': 'warn',
     'react/self-closing-comp': 'warn',
+    'react/jsx-curly-brace-presence': 'warn',
+    'react-hooks/exhaustive-deps': 'off',
   },
   settings: {
     react: {
