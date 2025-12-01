@@ -3,32 +3,71 @@
 TypeScript / React 프로젝트에서 공통으로 사용할 수 있는
 ESLint + Prettier 설정 라이브러리입니다.
 
-- 모노레포 및 여러 프로젝트에서 통일된 코드 스타일과 규칙을 유지하고 싶을 때
-- TypeScript 기반으로 코드 관리를 깔끔하게 하고 싶을 때
-- 프로젝트맞다 ESLint 및 Prettier 설정을 새로 만드는 작업을 줄이기 위해
+다음과 같은 상황에서 유용합니다:
 
-사용할 수 있도록 만든 **공용 설정 리포지토리**입니다.
+- 모노레포 및 여러 프로젝트에서 **통일된 코드 스타일**과 **규칙**을 유지하고 싶을 때
+- TypeScript 기반으로 **정확하고 엄격한 코드 검사**를 하고 싶을 때
+- 매번 ESLint / Prettier 설정을 새로 만드는 과정을 **단순화**하고 싶을 때
+
+이 리포지토리는 이러한 요구를 해결하기 위해 만들어진 **공용 구성 패키지**입니다.
 
 ---
 
-## 주요 기능
+## ✨ 주요 기능
 
 - `eslint-config`
   - JS / TS / React 를 위한 기본 규칙 제공
   - TypeScript 타입 정보를 활용한 엄격한 검사
-  - 'impot' 순서 및 경로 규칙 강제
-  - Prettier와 충돌 없는 ESLint 설정
+  - 'impot' 순서 및 경로 규칙 적용
+  - Prettier와 충돌하지 않는 ESLint 환경 구성
 
 - `prettier-config`
-  - 모노레포 및 여러 프로젝트에서 재사용 가능한 Prettier 포멧 설정
+  - 모노레포 및 여러 프로젝트에서 재사용 가능한 **일관된 Prettier 포멧 설정**
   - trailing comma, 따옴표, 줄 길이 등 스타일 일관성 유지
+  - ESLint와 충돌하지 않는 Prettier 환경 구성
 
 ---
 
-## 사용 방법
+## 📦 사용 방법
 
 ### 1. 설치하기
 
 ```bash
 pnpm add -D eslint prettier @frontend/eslint-config @frontend/prettier-config
+```
+
+### 2. ESLint 설정 적용하기
+
+프로젝트 루트에 eslint.config.mjs 파일을 생성하고 아래처럼 설정을 불러옵니다.
+
+```bash
+// eslint.config.mjs
+import eslintConfig from '@frontend/eslint-config';
+
+export default eslintConfig;
+```
+
+### 3. Prettier 설정 적용하기
+
+프로젝트 루트에 prettier.config,mjs 파일을 생성하고 아래처럼 설정을 불러옵니다.
+
+```bash
+// prettier.config.mjs
+import prettierConfig from '@frontend/prettier-config';
+
+export default prettierConfig;
+```
+
+## 🎯 추천 스크립트
+
+프로젝트 package.json에 아래처럼 추가하면 편리합니다.
+
+```bash
+{
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  }
+}
 ```
