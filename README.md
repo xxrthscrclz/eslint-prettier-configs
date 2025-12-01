@@ -71,3 +71,11 @@ export default prettierConfig;
   }
 }
 ```
+
+---
+
+## 🔍 CI 자동 검사 (GitHub Actions)
+
+이 리포지토리는 psh / PR 시 자동으로 lint + prettier check가 실행되도록 구성되어 있습니다.
+
+workflow 예시는 .github/workflows/ci.yml에서 확인할 수 있습니다.
