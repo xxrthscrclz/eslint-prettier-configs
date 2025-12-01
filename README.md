@@ -22,36 +22,36 @@ ESLint + Prettier 설정 라이브러리입니다.
   - Prettier와 충돌하지 않는 ESLint 환경 구성
 
 - `prettier-config`
-  - 모노레포 및 여러 프로젝트에서 재사용 가능한 **일관된 Prettier 포멧 설정**
+  - 모노레포 및 여러 프로젝트에서 재사용 가능한 **일관된 Prettier format 설정**
   - trailing comma, 따옴표, 줄 길이 등 스타일 일관성 유지
   - ESLint와 충돌하지 않는 Prettier 환경 구성
 
 ---
 
-## 📦 사용 방법
-
-### 1. 설치하기
+## 📦 설치
 
 ```bash
 pnpm add -D eslint prettier @frontend/eslint-config @frontend/prettier-config
 ```
 
-### 2. ESLint 설정 적용하기
+## 🛠 적용 방법
+
+### 1. ESLint 설정 적용하기
 
 프로젝트 루트에 eslint.config.mjs 파일을 생성하고 아래처럼 설정을 불러옵니다.
 
-```mjs
+```js
 // eslint.config.mjs
 import eslintConfig from '@frontend/eslint-config';
 
 export default eslintConfig;
 ```
 
-### 3. Prettier 설정 적용하기
+### 2. Prettier 설정 적용하기
 
 프로젝트 루트에 prettier.config.mjs 파일을 생성하고 아래처럼 설정을 불러옵니다.
 
-```mjs
+```js
 // prettier.config.mjs
 import prettierConfig from '@frontend/prettier-config';
 
@@ -79,3 +79,10 @@ export default prettierConfig;
 이 리포지토리는 push / PR 시 자동으로 lint + prettier check가 실행되도록 구성되어 있습니다.
 
 workflow 예시는 .github/workflows/ci.yml에서 확인할 수 있습니다.
+
+```yaml
+# 예시: CI 검증 흐름
+- Lint 검사
+- Prettier 포맷 검사
+- pnpm workspace 기반 설치
+```
