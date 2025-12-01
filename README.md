@@ -30,7 +30,5 @@ ESLint + Prettier 설정 라이브러리입니다.
 ### 1. 설치하기
 
 ```bash
-pnpm add -D eslint prettier eslint-config prettier-config
-
-
+pnpm add -D eslint prettier @frontend/eslint-config @frontend/prettier-config
 ```

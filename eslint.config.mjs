@@ -1,3 +1,3 @@
-import eslintConfig from 'eslint-config';
+import eslintConfig from '@frontend/eslint-config';
 
 export default eslintConfig;
