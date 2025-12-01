@@ -63,6 +63,7 @@ export default prettierConfig;
 프로젝트 package.json에 아래처럼 추가하면 편리합니다.
 
 ```json
+// package.json
 {
   "scripts": {
     "lint": "eslint .",
