@@ -6,8 +6,9 @@
   "scripts": {
     "lint": "eslint .",
     "format": "prettier --write .",
-    "test": "turbo run test",
-    "build": "turbo run build"
+    "format:check": "prettier --check .",
+    "test": "pnpm lint && pnpm format:check",
+    "ci": "pnpm test"
   },
   "keywords": [],
   "author": "",
